@@ -30,6 +30,15 @@ export default defineConfig([
             'unicorn/prefer-ternary': 'error',
         },
     },
+    {
+        files: ['test/**/*.js'],
+        languageOptions: {
+            globals: {
+                ...globals.node,
+                ...globals.mocha,
+            },
+        },
+    },
     { files: ['**/*.js'], languageOptions: { sourceType: 'commonjs' } },
     eslintPluginPrettierRecommended,
 ]);
